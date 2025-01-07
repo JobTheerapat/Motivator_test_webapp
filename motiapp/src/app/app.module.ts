@@ -1,34 +1,37 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AppRoutingModule } from './app-routing.module';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { ReactiveFormsModule } from '@angular/forms';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { NzFormModule } from 'ng-zorro-antd/form';
-import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzCardModule } from 'ng-zorro-antd/card';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// NG-ZORRO Modules
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+
+// NG-ZORRO i18n
+import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
+
+// Application Components
+import { AppComponent } from './app.component';
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
-    AppRoutingModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    ReactiveFormsModule,
-    NzFormModule,
-    NzInputModule,
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule, // จำเป็นสำหรับ NG-ZORRO
     NzButtonModule,
-    NzCardModule,
-  ]
+    NzInputModule,
+    NzLayoutModule,
+    NzMessageModule,
+    AppComponent,
+  ],
+  providers: [
+    { provide: NZ_I18N, useValue: en_US }, // ตั้งค่าภาษา (เปลี่ยนเป็น th_TH หากต้องการภาษาไทย)
+  ],
 })
-
 export class AppModule {}

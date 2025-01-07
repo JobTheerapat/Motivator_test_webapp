@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class WelcomeComponent {
   constructor() {}
+
+  ngOnInit() {
+    console.log('Welcome to Motivator App!');
+    // console.log(localStorage);
+  }
 }

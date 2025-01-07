@@ -1,0 +1,24 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form nz-form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzFor="username">Username</nz-form-label>
+      <nz-form-control [nzSpan]="14" nzErrorTip="Please input your username!">
+        <input nz-input [(ngModel)]="username" name="username" id="username" required />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzFor="password">Password</nz-form-label>
+      <nz-form-control [nzSpan]="14" nzErrorTip="Please input your password!">
+        <input nz-input [(ngModel)]="password" name="password" type="password" id="password" required />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control [nzSpan]="14" [nzOffset]="7">
+        <button nz-button >Login</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>
