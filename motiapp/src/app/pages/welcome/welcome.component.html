@@ -1,1 +1,104 @@
-<p>welcome works!</p>
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <h1>Home</h1>
+    <button nz-button nzType="text" nzShape="circle" class="search-btn">🔍</button>
+  </div>
+
+  <!-- User Info -->
+  <nz-card class="user-info">
+    <nz-row nzAlign="middle">
+      <nz-col [nzSpan]="16">
+        <div class="profile">
+          <nz-avatar [nzSrc]="'https://s.hs-data.com/bilder/spieler/gross/173692.jpg'" nzSize="large"></nz-avatar>
+          <div>
+            <p>สวัสดี, <strong>Mohammed Salah</strong></p>
+            <p>ของรางวัลสามารถทำกิจกรรมแลกได้!</p>
+          </div>
+        </div>
+      </nz-col>
+      <nz-col [nzSpan]="8" class="coins">
+        <p>Total Coins: <span class="coin-count">30</span> 🪙</p>
+        <button nz-button nzType="primary">Redeem rewards</button>
+      </nz-col>
+    </nz-row>
+  </nz-card>
+
+  <nz-card>
+    <p>How Do You Feel Today?</p>
+    <nz-divider></nz-divider>
+    <nz-space>
+      <nz-rate [(ngModel)]="rating">
+        <ng-template #icon let-rating>
+          <nz-icon [nzType]="getEmojiIconForRating(rating)" [ngStyle]="{'font-size': '2rem'}"></nz-icon>
+        </ng-template>
+      </nz-rate>    </nz-space>
+  </nz-card>
+
+
+  <!-- Date Selector -->
+  <nz-card class="activity-statistics">
+    <H1 style="display: inline;"> {{ currentDate | date:'dd' }} </H1>
+    <H2 style="display: inline;"> {{ currentDate | date:'EEEE' }} </H2>
+
+    <H3 style="display: inline;"> {{ currentDate | date:'MMMM' }} </H3>
+    <H2 style="display: inline;"> {{ currentDate | date:'YYYY' }} </H2>
+    <nz-progress [nzPercent]="50" [nzStrokeWidth]="10" nzStatus="exception"></nz-progress>
+    <p>Completed: 75%</p>
+    <p>In Process: 25%</p>
+  </nz-card>
+
+
+  <!-- <nz-card class="activity-statistics">
+    <p> {{ currentDate | date:'dd MMMM yyyy' }}</p>
+    <nz-divider></nz-divider>
+    <nz-space>
+    <nz-progress [nzPercent]="30"></nz-progress>
+    <nz-progress [nzPercent]="50" nzStatus="active"></nz-progress>
+    <nz-progress [nzPercent]="70" nzStatus="exception"></nz-progress>
+    <nz-progress [nzPercent]="100"></nz-progress>
+    <nz-progress [nzPercent]="50" [nzShowInfo]="false"></nz-progress>
+    </nz-space>
+    <div class="check-btn">
+      <button nz-button nzType="primary">Check</button>
+    </div>
+  </nz-card> -->
+
+  <!-- Activity Status -->
+  <H2> {{ 'Activity Status' }} </H2>
+  <div class="activity-status">
+    <nz-card nzBordered [nzHoverable]="true">
+      <p>Nutrition</p>
+      <nz-progress [nzPercent]="80" nzType="circle" [nzWidth]="80"></nz-progress>
+    </nz-card>
+    <nz-card nzBordered [nzHoverable]="true">
+      <p>Workout</p>
+      <nz-progress [nzPercent]="50" nzType="circle" [nzWidth]="80"></nz-progress>
+    </nz-card>
+    <nz-card nzBordered [nzHoverable]="true">
+      <p>Read Book</p>
+      <nz-progress [nzPercent]="15" nzType="circle" [nzWidth]="80"></nz-progress>
+    </nz-card>
+  </div>
+
+  <!-- Daily Activities -->
+  <nz-card class="daily-activities">
+    <h3>Your Daily Activities</h3>
+    <div class="activity">
+      <p>นั่งสมาธิ 10 นาที</p>
+      <button nz-button nzType="dashed" nzShape="circle">+</button>
+    </div>
+    <div class="activity">
+      <p>เล่นโยคะ 10 นาที</p>
+      <button nz-button nzType="dashed" nzShape="circle">+</button>
+    </div>
+  </nz-card>
+
+  <!-- Activity Statistics -->
+  <nz-card class="activity-statistics">
+    <h3>Activity Statistics</h3>
+    <nz-progress [nzPercent]="100" [nzStrokeWidth]="10"></nz-progress>
+    <p>Completed: 75%</p>
+    <p>In Process: 25%</p>
+  </nz-card>
+</div>

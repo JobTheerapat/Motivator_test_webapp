@@ -1,0 +1,50 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  margin-bottom: 20px;
+}
+
+.date-selector {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.activity-status {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.daily-activities {
+  margin: 20px 0;
+}
+
+.activity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.activity-statistics {
+  margin: 20px 0;
+}
+
+.inline-header {
+  display: inline;
+}
